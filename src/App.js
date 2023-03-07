@@ -2,23 +2,6 @@ import "./App.css";
 import { useState, useEffect } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <div className="box">
-        <div className="field">
-          <div className="control">
-            <textarea className="textarea is-large" placeholder="Notes..." />
-          </div>
-        </div>
-        <button className="button is-large is-primary is-active">Save</button>
-        <button className="button is-large">Clear</button>
-      </div>
-    </div>
-  );
-}
-
-
-function App() {
   const [note, setNote] = useState('');
 
   useEffect(() => {
@@ -48,8 +31,18 @@ function App() {
       <button onClick={handleResetNote}>Reset</button>
     </div>
   );
+  return (
+    <div className="App">
+      <div className="box">
+        <div className="field">
+          <div className="control">
+            <textarea className="textarea is-large" placeholder="Notes..." />
+          </div>
+        </div>
+        <button className="button is-large is-primary is-active">Save</button>
+        <button className="button is-large">Clear</button>
+      </div>
+    </div>
+  ); 
 }
-
-export default App;
-
 export default App;
