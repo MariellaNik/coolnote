@@ -1,5 +1,5 @@
-import "./App.css";
 import { useState, useEffect } from 'react';
+import 'bulma/css/bulma.min.css';
 
 function App() {
   const [note, setNote] = useState('');
@@ -25,24 +25,25 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <textarea value={note} onChange={handleNoteChange} />
-      <button onClick={handleSaveNote}>Save</button>
-      <button onClick={handleResetNote}>Reset</button>
-    </div>
-  );
-  return (
-    <div className="App">
-      <div className="box">
-        <div className="field">
-          <div className="control">
-            <textarea className="textarea is-large" placeholder="Notes..." />
+    <div className="section">
+      <div className="container">
+        <div className="columns">
+          <div className="column">
+            <div className="field">
+              <label className="label">Notes</label>
+              <div className="control">
+                <textarea className="textarea is-large" value={note} onChange={handleNoteChange} placeholder="Enter your notes here"></textarea>
+              </div>
+            </div>
+            <div className="buttons">
+              <button className="button is-primary is-large" onClick={handleSaveNote}>Save</button>
+              <button className="button is-danger is-large" onClick={handleResetNote}>Reset</button>
+            </div>
           </div>
         </div>
-        <button className="button is-large is-primary is-active">Save</button>
-        <button className="button is-large">Clear</button>
       </div>
     </div>
-  ); 
+  );
 }
+
 export default App;
